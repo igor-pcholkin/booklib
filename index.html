@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js" type="text/javascript"></script>
+    <script src="https://rawgithub.com/lodash/lodash/2.3.0/dist/lodash.min.js" type="text/javascript"></script>
+    <script src="books.js" type="text/javascript"></script>
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="books.css">
+  </head>
+  <body>
+    <h2>Библиотека</h2>
+    <div ng-controller="BookCtrl">
+      <div id="book-form">
+	      <form ng-submit="addBook()">
+	      	<ul class="book-form-list">
+		        <li><input type="text" ng-model="title"  size="30" placeholder="название"></li>
+		        <li><input type="text" ng-model="author"  size="30" placeholder="автор"></li>
+		        <li><select ng-model="room" ng-change="roomChanged()" ng-options="r.name for r in rooms"></select></li>
+		        <li><select ng-model="cabinet" ng-options="c for c in room.cabinets"></select></li>
+		        <li><input type="text" ng-model="shelf"  size="30" placeholder="впишите полку"></li>
+	        </ul>       
+	        <input type="submit" class="btn-primary" value="добавить" />
+          <a href="" ng-click="updateBook()" class="btn" id="update-btn" ng-disabled="isUpdateDisabled()">изменить</a>
+	      </form>
+      </div>
+      <div id="rooms">
+        <ul>
+      		<li ng-repeat="room in rooms">
+      		  <a href="#" ng-click="toggleRoom(room.name)">
+      		          		         		    <img ng-src="pics/rooms/{{room.name}}.jpg" class="{{roomSelected(room.name)}}" />
+      		  </a>      		  
+      		</li>        	
+    		</ul>
+    		<div id="cabinets">
+          <ul>
+            <li ng-repeat="cabinet in room.cabinets">
+              <a href="" ng-click="toggleCabinet(cabinet)">
+                <img ng-src="pics/cabinets/{{cabinet}}.jpg" class="{{cabinetSelected(cabinet)}}" />
+              </a>
+            </li>         
+          </ul>
+    		</div>      	
+      </div>
+      <div id="book-list">	
+	      <ul class="books-list">
+	        <li ng-repeat="book in booksInCabinet()" ng-click="editBook(book)">
+	          <span class="smallbox {{book.room}}"></span><span class="book-in-list">{{ getBookTitle(book) }}</span>
+	        </li>
+	      </ul>
+      </div>
+      <div id="filtered-list">
+        <input type="text" ng-model="search" class="search-query" placeholder="Search">
+        <ul class="books-list">
+          <li ng-repeat="book in booksInSearch()" ng-click="editBook(book)">
+            <span class="smallbox {{book.room}}"></span><span class="book-in-list">{{ getBookTitle(book) }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

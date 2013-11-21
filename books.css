@@ -1,0 +1,103 @@
+h2 {
+	padding-left: 0.75em;
+	font-size: 1.5em;
+	color: lightgrey;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.books-list {
+	margin-top: 1em;
+	margin-left: 0.5em;
+}
+
+.books-list li:hover {
+  background-color: gold;
+  cursor: pointer;
+}
+
+#book-form {
+	float: left;
+	margin-left: 1em;
+}
+
+#book-list, #filtered-list {
+	padding-left: 1em;	
+	float: left;
+}
+
+#book-list {
+  max-width: 400px;
+}
+
+#filtered-list {
+  min-width: 200px;
+  max-width: 300px;
+}
+
+#rooms {
+	float: left;
+	margin-left: 1em;
+	max-width: 360px;
+}
+
+#rooms li {
+  display: inline-block;
+}
+
+#rooms img {
+  max-width: 140px;
+  margin: 0.2em;
+}
+
+#cabinets img {
+  max-width: 120px;
+  max-height: 120px;
+  margin: 0.25em;
+}
+
+
+
+
+.book-form-list {
+	margin-left: 0px;
+}
+
+.детская {
+	background-color: skyblue;
+}
+
+.гостиная {
+	background-color: indianred;
+}
+
+.smallbox {
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+
+.book-in-list {
+	vertical-align: middle;
+}
+
+.room-selected {
+	border: 1px solid lightgrey;
+	padding: 4px;
+	background: gold;
+}
+
+.cabinet-selected {
+  border: 1px solid lightgrey;
+  padding: 4px;
+  background: deepskyblue;
+}
+
+.btn-center {
+  text-align: center;
+}
+
