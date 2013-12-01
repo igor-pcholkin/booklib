@@ -45,7 +45,7 @@
       <div id="book-list">	
 	      <ul class="books-list">
 	        <li ng-repeat="book in booksInCabinet()" ng-click="editBook(book)">
-	          <span class="smallbox {{book.room}}"></span><span class="book-in-list">{{ getBookTitle(book) }}</span>
+	          <span class="book-in-list">{{ getBookTitle(book) }}</span>
 	        </li>
 	      </ul>
       </div>
@@ -53,7 +53,7 @@
         <input type="text" ng-model="search" class="search-query" placeholder="Search">
         <ul class="books-list">
           <li ng-repeat="book in booksInSearch()" ng-click="editBook(book)">
-            <span class="smallbox {{book.room}}"></span><span class="book-in-list">{{ getBookTitle(book) }}</span>
+            <span class="book-in-list">{{ getBookTitle(book) }}</span>
           </li>
         </ul>
       </div>
