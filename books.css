@@ -50,12 +50,16 @@ ul {
 #rooms img {
   max-width: 140px;
   margin: 0.2em;
+  border: 1px solid lightgrey;
+  padding: 2px;
 }
 
 #cabinets img {
   max-width: 120px;
   max-height: 120px;
   margin: 0.25em;
+  border: 1px solid lightgrey;
+  padding: 2px;
 }
 
 
@@ -101,3 +105,10 @@ ul {
   text-align: center;
 }
 
+.panel {
+  border: 1px dotted lightgrey;
+}
+
+#rooms ul {
+  margin: 10px;
+}
