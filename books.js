@@ -1,14 +1,20 @@
 function BookCtrl($scope) {
   
+  $scope.getBook = function(i) {
+    localStorage["books-" + i];
+  };
+
+  $scope.setBook = function(i, book) {
+    localStorage["books-" + i] = book;
+  };
+  
   $scope.readFromStorage = function() {
     var books = [];
-    for (i = 0; i < localStorage.length; i++) {
-      var book = JSON.parse(localStorage[i]);
-      // missing id field is a legacy feature
-      if (!book.id) {
-        book.id = i;
+    for (var key in localStorage) {
+      if (key.indexOf("books-") == 0) {
+        var book = JSON.parse(localStorage[key]);
+        books.push(book);
       }
-      books.push(book);
     }
     return books;
   };
@@ -53,7 +59,7 @@ function BookCtrl($scope) {
  
   $scope.addBook = function() {
     var book = {
-      id : localStorage.length,
+      id : $scope.books.length,
       title : $scope.title,
       author : $scope.author,
       room : $scope.room.name,
@@ -62,7 +68,7 @@ function BookCtrl($scope) {
     };
 
     $scope.books.push(book);
-    localStorage[book.id] = JSON.stringify(book);
+    $scope.setBook(book.id, JSON.stringify(book));
     
     $scope.title = '';
     $scope.author = '';
@@ -81,7 +87,7 @@ function BookCtrl($scope) {
     book.cabinet = $scope.cabinet;
     book.shelf = $scope.shelf;
 
-    localStorage[book.id] = JSON.stringify(book);
+    $scope.setBook(book.id, JSON.stringify(book));
     $scope.title = '';
     $scope.author = '';
     $scope.updateDisabled = true;
