@@ -9,9 +9,9 @@
     <title>My library</title>
   </head>
   <body>
-    <h2>Библиотека</h2>
-    <div ng-controller="BookCtrl">
+    <div ng-controller="BookCtrl" id="wrapper">
       <div id="book-form">
+        <h2>Библиотека</h2>
 	      <form ng-submit="addBook()">
 	      	<ul class="book-form-list">
 		        <li><input type="text" ng-model="title"  size="30" placeholder="название"></li>

@@ -1,3 +1,7 @@
+#wrapper {
+  margin-top: 1em;
+}
+
 h2 {
 	padding-left: 0.75em;
 	font-size: 1.5em;
@@ -9,8 +13,8 @@ ul {
 }
 
 .books-list {
-	margin-top: 1em;
 	margin-left: 0.5em;
+	margin-top: 0.5em;
 }
 
 .books-list li:hover {
@@ -24,7 +28,7 @@ ul {
 }
 
 #book-list, #filtered-list {
-	padding-left: 1em;	
+	padding-left: 0.5em;	
 	float: left;
 }
 
@@ -34,13 +38,13 @@ ul {
 
 #filtered-list {
   min-width: 200px;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 #rooms {
 	float: left;
 	margin-left: 1em;
-	max-width: 360px;
+	max-width: 435px;
 }
 
 #rooms li {
@@ -48,15 +52,15 @@ ul {
 }
 
 #rooms img {
-  max-width: 140px;
+  max-height: 180px;
   margin: 0.2em;
   border: 1px solid lightgrey;
   padding: 2px;
 }
 
 #cabinets img {
-  max-width: 120px;
-  max-height: 120px;
+  width: 90px;
+  height: 90px;
   margin: 0.25em;
   border: 1px solid lightgrey;
   padding: 2px;
