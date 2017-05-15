@@ -12,10 +12,8 @@ function BookCtrl($scope) {
     var books = [];
     for (var key in localStorage) {
       if (key.indexOf("books-") == 0) {
-	if (localStorage[key] != "undefined") {
-        	var book = JSON.parse(localStorage[key]);
-	        books.push(book);
-	}
+        var book = JSON.parse(localStorage[key]);
+	books.push(book);
       }
     }
     return books;
